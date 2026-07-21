@@ -18,8 +18,6 @@ with inputs;
       homeDirectory = "/home/${username}";
 
       packages = with pkgs; [
-        git
-        firefox
         vscodium
         direnv
       ];
