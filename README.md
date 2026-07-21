@@ -26,4 +26,5 @@ After changing either the user or host SSH key, run `sync-ssh-age-keys` to updat
 - Add user/host SSH public key outputs to the flake for future consumption by other flakes (e.g. server configurations)
 - Rename repo from `super-laptop` to something appropriate for containing multiple hosts and a user profile; maybe `super-machine`
 - Migrate hyprland configuration from hyprlang to lua (after next NixOS release or something)
-- Configure encrypted DNS
+- install ublock origin via firefox module
+- add bluetooth support
