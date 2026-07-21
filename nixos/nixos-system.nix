@@ -5,6 +5,7 @@
   system,
   stateVersion,
   profile,
+  modules,
   ...
 }:
 with inputs;
@@ -31,5 +32,6 @@ nixpkgs.lib.nixosSystem {
     {
       system.stateVersion = stateVersion;
     }
-  ];
+  ]
+  ++ modules;
 }

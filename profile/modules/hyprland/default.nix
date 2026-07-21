@@ -1,4 +1,9 @@
 { pkgs, ... }: {
+  imports = [
+    ./hypridle.nix
+    ./hyprlock.nix
+    ./settings.nix
+  ];
 
   home.packages = with pkgs; [
     kitty
@@ -16,6 +21,5 @@
     package = null;
     portalPackage = null;
     configType = "hyprlang";
-    settings = import ./settings.nix;
   };
 }

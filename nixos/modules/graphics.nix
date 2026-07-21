@@ -1,6 +1,9 @@
 { lib, ... }: {
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
     nvidia.open = true;
   };
 

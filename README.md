@@ -28,3 +28,4 @@ After changing either the user or host SSH key, run `sync-ssh-age-keys` to updat
 - Migrate hyprland configuration from hyprlang to lua (after next NixOS release or something)
 - install ublock origin via firefox module
 - add bluetooth support
+- enable lanzaboote

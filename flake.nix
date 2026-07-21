@@ -63,6 +63,13 @@
           ;
 
         stateVersion = "26.05";
+
+        modules = [
+          {
+            networking.hostName = "super-laptop";
+            time.timeZone = "America/Chicago";
+          }
+        ];
       };
     };
 }

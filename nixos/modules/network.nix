@@ -1,8 +1,10 @@
 {
   services.resolved = {
     enable = true;
-    dnssec = "true";
-    dnsovertls = "true";
+    settings.Resolve = {
+      DNSOverTLS = true;
+      DNSSEC = true;
+    };
   };
 
   networking = {
