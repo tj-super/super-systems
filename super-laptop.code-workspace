@@ -1,0 +1,35 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "terminal.integrated.env.linux": {
+            "DIRENV_LOG_FORMAT": ""
+        },
+        "nix.enableLanguageServer": true,
+        "nix.serverPath": "nixd",
+        "nix.serverSettings": {
+            "nixd": {
+                "formatting": {
+                    "command": [
+                        "nixfmt"
+                    ]
+                }
+            }
+        },
+        "[nix]": {
+            "editor.defaultFormatter": "jnoortheen.nix-ide",
+            "editor.formatOnSave": true,
+            "editor.tabSize": 2,
+            "editor.insertSpaces": true
+        }
+    },
+    "extensions": {
+        "recommendations": [
+            "jnoortheen.nix-ide",
+            "mkhl.direnv"
+        ]
+    }
+}
