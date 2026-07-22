@@ -1,13 +1,12 @@
 {
   stateVersion,
   username,
-  inputs,
+  ...
 }:
-with inputs;
 {
   inherit stateVersion username;
 
-  module = { pkgs, ... }: {
+  module = {
     imports = [
       ./modules
     ];
@@ -16,11 +15,6 @@ with inputs;
       inherit stateVersion username;
 
       homeDirectory = "/home/${username}";
-
-      packages = with pkgs; [
-        vscodium
-        direnv
-      ];
     };
 
   };

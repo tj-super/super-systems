@@ -54,14 +54,13 @@ let
 in
 
 pkgs.mkShell {
-  buildInputs = let
-    disko = inputs.disko.packages.${system}.default;
-  in
+  buildInputs =
+    let
+      disko = inputs.disko.packages.${system}.default;
+    in
     with pkgs;
     scripts
     ++ [
       disko
-      nixd
-      nixfmt
     ];
 }
