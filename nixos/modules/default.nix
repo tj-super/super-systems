@@ -9,6 +9,7 @@
     ./hyprland.nix
     #    ./lanzaboote.nix
     ./network.nix
+    ./nix-ld.nix
     ./nix.nix
     ./sound.nix
     ./ssh.nix

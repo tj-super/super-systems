@@ -6,6 +6,7 @@
     ./git.nix
     ./hyprland
     ./lutris.nix
+    ./shell.nix
     ./signal.nix
     ./vscodium.nix
   ];
