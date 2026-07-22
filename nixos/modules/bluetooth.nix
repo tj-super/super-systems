@@ -4,6 +4,8 @@
     powerOnBoot = false;
   };
 
+  services.blueman.enable = true;
+
   services.pipewire.wireplumber.extraConfig."10-bluez" = {
     "monitor.bluez.properties" = {
       "bluez5.enable-sbc-xq" = true;

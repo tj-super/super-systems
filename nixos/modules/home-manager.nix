@@ -1,8 +1,13 @@
-{ profile, self, ... }:
+{
+  profile,
+  self,
+  inputs,
+  ...
+}:
 {
   home-manager = {
     extraSpecialArgs = {
-      inherit self;
+      inherit self inputs;
     };
 
     useUserPackages = true;

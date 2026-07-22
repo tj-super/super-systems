@@ -15,6 +15,7 @@ nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit
       self
+      inputs
       keys
       profile
       ;
