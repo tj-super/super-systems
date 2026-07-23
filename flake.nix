@@ -45,8 +45,8 @@
     in
     {
       pubKeys.ssh = {
-        users.super = import ./keys/ssh/user.pub;
-        hosts.super-laptop = import ./keys/ssh/host.pub;
+        users.super = builtins.readFile ./keys/ssh/user.pub;
+        hosts.super-laptop = builtins.readFile ./keys/ssh/host.pub;
       };
 
       devShells.${system}.default = import ./shell/dev-shell.nix {
