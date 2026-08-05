@@ -58,7 +58,7 @@
           ;
       };
 
-      nixosConfigurations.super-station = import ./nixos/nixos-system.nix {
+      nixosConfigurations.super-station = import ./host/station/nixos-system.nix {
         inherit
           self
           keys
