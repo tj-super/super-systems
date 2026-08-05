@@ -10,7 +10,7 @@
     };
 
     agenix = {
-      url = "github:ryantm/agenix?ref=0.15.0";
+      url = "github:ryantm/agenix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -34,7 +34,6 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      keys = import ./keys/keys.nix;
 
       profile = (import ./profile/home.nix) {
         inherit inputs;
@@ -42,39 +41,47 @@
         username = "super";
         stateVersion = "26.05";
       };
+
+      satellite = import ./host/satellite/host.nix {
+        inherit
+          self
+          system
+          inputs
+          profile
+          ;
+      };
+
+      station = import ./host/station/host.nix {
+        inherit
+          self
+          system
+          inputs
+          profile
+          ;
+      };
     in
     {
       lib.pubKeys.ssh = {
-        users.super = builtins.readFile ./keys/ssh/user.pub;
-        hosts.super-station = builtins.readFile ./keys/ssh/host.pub;
+        users.super = profile.publicKey;
+        hosts.satellite = satellite.publicKey;
+        hosts.station = station.publicKey;
       };
-      
-      devShells.${system}.default = import ./shell/dev-shell.nix {
+
+      devShells.${system}.default = import ./shell/dev-shell/default.nix {
         inherit
           self
           pkgs
           inputs
           system
           ;
+
+        hosts = {
+          inherit satellite;
+          inherit station;
+        };
       };
 
-      nixosConfigurations.super-station = import ./host/station/nixos-system.nix {
-        inherit
-          self
-          keys
-          inputs
-          system
-          profile
-          ;
-
-        stateVersion = "26.05";
-
-        modules = [
-          {
-            networking.hostName = "super-station";
-            time.timeZone = "America/Chicago";
-          }
-        ];
-      };
+      nixosConfigurations.satellite = satellite.nixosConfiguration;
+      nixosConfigurations.station = station.nixosConfiguration;
     };
 }

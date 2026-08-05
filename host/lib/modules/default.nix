@@ -1,0 +1,19 @@
+{
+  imports = [
+    ./activate.nix
+    ./bluetooth.nix
+    ./boot.nix
+    ./home-manager.nix
+    ./graphics.nix
+    ./hyprland.nix
+    #./lanzaboote.nix
+    ./network.nix
+    ./nix-ld.nix
+    ./nix.nix
+    ./printing.nix
+    ./sound.nix
+    ./ssh.nix
+    ./users.nix
+    ./vm-variant.nix
+  ];
+}

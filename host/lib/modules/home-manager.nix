@@ -7,10 +7,12 @@
 {
   home-manager = {
     extraSpecialArgs = {
-      inherit self inputs;
+      inherit self inputs profile;
     };
 
-    useUserPackages = true;
     users."${profile.username}" = profile.module;
+
+    useGlobalPkgs = true;
+    useUserPackages = true;
   };
 }

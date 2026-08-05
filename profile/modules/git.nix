@@ -1,6 +1,6 @@
-{ config, self, ... }:
+{ config, profile, ... }:
 {
-  home.file.".ssh/allowed_signers".text = "* ${builtins.readFile "${self}/keys/ssh/user.pub"}";
+  home.file.".ssh/allowed_signers".text = "* ${profile.publicKey}";
 
   programs.git = {
     enable = true;

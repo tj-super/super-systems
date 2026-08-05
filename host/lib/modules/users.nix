@@ -1,10 +1,12 @@
 {
-  keys,
   config,
   profile,
+  lib,
   ...
 }:
 {
+  age.secrets.user-password.file = profile.passwordFile;
+
   users = {
     mutableUsers = false;
 
@@ -13,12 +15,16 @@
     users."${profile.username}" = {
       isNormalUser = true;
       hashedPasswordFile = config.age.secrets.user-password.path;
-      openssh.authorizedKeys.keys = [
-        keys.ssh.user.pub
-      ];
       extraGroups = [
         "wheel"
       ];
+    };
+  };
+
+  virtualisation.vmVariant = {
+    users.users.root = {
+      hashedPassword = lib.mkForce null;
+      password = lib.mkForce "root";
     };
   };
 }
