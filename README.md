@@ -23,7 +23,6 @@ After changing either the user or host SSH key, run `sync-ssh-age-keys` to updat
   * Remove `ssh` subdirectory from `keys` as this will only ever contain SSH keys
     * AGE secrets will be used for every other kind of key/secret
 - Handle re-encryption of AGE secrets after changing SSH keys via scripts.
-- Rename repo from `super-laptop` to something appropriate for containing multiple hosts and a user profile; maybe `super-machine`
 - Migrate hyprland configuration from hyprlang to lua (after next NixOS release or something)
 - install ublock origin via firefox module
 - add bluetooth support

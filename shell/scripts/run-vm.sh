@@ -69,7 +69,7 @@ chmod 600 "$TARGET_KEY"
 ssh-keygen -y -f "$TMP_SSH_DIR/ssh_host_ed25519_key" > "$TMP_SSH_DIR/ssh_host_ed25519_key.pub"
 
 # Build VM
-nix build .#nixosConfigurations.super-laptop.config.system.build.vm
+nix build .#nixosConfigurations.super-station.config.system.build.vm
 
 # Run vM
 SHARED_DIR=$TMP_SHARED_DIR ./result/bin/run-nixos-vm

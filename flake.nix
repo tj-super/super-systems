@@ -1,5 +1,5 @@
 {
-  description = "super-laptop";
+  description = "super-systems";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
@@ -46,7 +46,7 @@
     {
       pubKeys.ssh = {
         users.super = builtins.readFile ./keys/ssh/user.pub;
-        hosts.super-laptop = builtins.readFile ./keys/ssh/host.pub;
+        hosts.super-station = builtins.readFile ./keys/ssh/host.pub;
       };
 
       devShells.${system}.default = import ./shell/dev-shell.nix {
@@ -58,7 +58,7 @@
           ;
       };
 
-      nixosConfigurations.super-laptop = import ./nixos/nixos-system.nix {
+      nixosConfigurations.super-station = import ./nixos/nixos-system.nix {
         inherit
           self
           keys
@@ -71,7 +71,7 @@
 
         modules = [
           {
-            networking.hostName = "super-laptop";
+            networking.hostName = "super-station";
             time.timeZone = "America/Chicago";
           }
         ];
