@@ -44,11 +44,11 @@
       };
     in
     {
-      pubKeys.ssh = {
+      lib.pubKeys.ssh = {
         users.super = builtins.readFile ./keys/ssh/user.pub;
         hosts.super-station = builtins.readFile ./keys/ssh/host.pub;
       };
-
+      
       devShells.${system}.default = import ./shell/dev-shell.nix {
         inherit
           self

@@ -62,5 +62,7 @@ pkgs.mkShell {
     scripts
     ++ [
       disko
+      nixd
+      nixfmt
     ];
 }
