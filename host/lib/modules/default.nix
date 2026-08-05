@@ -6,7 +6,7 @@
     ./home-manager.nix
     ./graphics.nix
     ./hyprland.nix
-    #./lanzaboote.nix
+    ./lanzaboote.nix
     ./network.nix
     ./nix-ld.nix
     ./nix.nix
