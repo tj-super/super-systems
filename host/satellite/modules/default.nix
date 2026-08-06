@@ -1,5 +1,5 @@
 {
-    imports = [
-        ./graphics.nix
-    ];
+  imports = [
+    ./graphics.nix
+  ];
 }

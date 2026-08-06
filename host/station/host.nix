@@ -25,7 +25,7 @@
       inputs.home-manager.nixosModules.default
       inputs.disko.nixosModules.default
 
-      ../lib/modules
+      ../lib/common
 
       ./hardware-configuration.nix
       ./configuration.nix

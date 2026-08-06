@@ -5,11 +5,11 @@
     ./boot.nix
     ./home-manager.nix
     ./graphics.nix
-    ./hyprland.nix
     ./lanzaboote.nix
     ./network.nix
     ./nix-ld.nix
     ./nix.nix
+    ./pantheon.nix
     ./printing.nix
     ./sound.nix
     ./ssh.nix

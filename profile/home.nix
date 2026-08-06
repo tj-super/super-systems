@@ -12,7 +12,7 @@
 
   module = {
     imports = [
-      ./modules
+      ./common
     ];
 
     home = {

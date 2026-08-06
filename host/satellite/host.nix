@@ -25,7 +25,7 @@
       inputs.agenix.nixosModules.default
       inputs.home-manager.nixosModules.default
 
-      ../lib/modules
+      ../lib/common
 
       ./hardware-configuration.nix
       ./configuration.nix
