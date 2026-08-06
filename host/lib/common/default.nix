@@ -9,7 +9,7 @@
     ./network.nix
     ./nix-ld.nix
     ./nix.nix
-    ./pantheon.nix
+    ./plasma.nix
     ./printing.nix
     ./sound.nix
     ./ssh.nix
