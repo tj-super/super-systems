@@ -30,6 +30,10 @@
       ./hardware-configuration.nix
       ./configuration.nix
       ./modules
+
+      ({ pkgs, ... }: {
+        environment.systemPackages = with pkgs; [ transmission_4-qt ];
+      })
     ];
   };
 }

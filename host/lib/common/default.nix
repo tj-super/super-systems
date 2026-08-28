@@ -5,6 +5,7 @@
     ./boot.nix
     ./home-manager.nix
     ./graphics.nix
+    ./hhg-nas.nix
     ./lanzaboote.nix
     ./network.nix
     ./nix-ld.nix
