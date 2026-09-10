@@ -6,6 +6,7 @@ let
 
   modules = [
     (import ./modules/hosts/default.nix inputs)
+    (import ./modules/oauth2_imap.nix inputs)
   ];
 
   moduleBuildInputs = lib.concatLists (map (m: m.buildInputs or [ ]) modules);

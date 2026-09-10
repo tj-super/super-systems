@@ -8,4 +8,6 @@
     ./signal.nix
     ./vscodium.nix
   ];
+
+  programs.thunderbird.enable = true;
 }
