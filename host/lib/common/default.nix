@@ -4,12 +4,14 @@
     ./bluetooth.nix
     ./boot.nix
     ./home-manager.nix
+    ./imapsync.nix
     ./graphics.nix
     ./hhg-nas.nix
     ./lanzaboote.nix
     ./network.nix
     ./nix-ld.nix
     ./nix.nix
+    ./pkgs.nix
     ./plasma.nix
     ./printing.nix
     ./sound.nix
