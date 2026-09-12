@@ -4,9 +4,9 @@
 set -euo pipefail
 
 usage() {
-    echo "Usage: $0 -p <gmail|office365> -f <token_file_path>" >&2
+    echo "Usage: $0 -p <gmail|office> -f <token_file_path>" >&2
     echo "Options:" >&2
-    echo "  -p  Provider: 'gmail' or 'office365' (required)" >&2
+    echo "  -p  Provider: 'gmail' or 'office' (required)" >&2
     echo "  -f  Path to the token file (required)" >&2
     exit 1
 }
@@ -56,11 +56,11 @@ case "$PROVIDER" in
             -d "grant_type=refresh_token")
         ;;
 
-    office365|outlook365)
+    office|outlook365)
         TOKEN_URI="https://login.microsoftonline.com/common/oauth2/v2.0/token"
         CLIENT_ID="9e5f94bc-e8a4-4e73-b8be-63364c29d753"
         
-        # Office365 Thunderbird client uses public client auth (no client_secret required)
+        # office Thunderbird client uses public client auth (no client_secret required)
         RESPONSE=$(curl -s -X POST "$TOKEN_URI" \
             -d "client_id=${CLIENT_ID}" \
             -d "grant_type=refresh_token" \
@@ -69,7 +69,7 @@ case "$PROVIDER" in
         ;;
 
     *)
-        echo "Error: Invalid provider '$PROVIDER'. Use 'gmail' or 'office365'." >&2
+        echo "Error: Invalid provider '$PROVIDER'. Use 'gmail' or 'office'." >&2
         exit 1
         ;;
 esac
@@ -82,7 +82,7 @@ if [[ -z "$NEW_ACCESS_TOKEN" ]]; then
     exit 1
 fi
 
-# Optionally extract new refresh_token if rotated by Office365/Google
+# Optionally extract new refresh_token if rotated by office/Google
 NEW_REFRESH_TOKEN=$(echo "$RESPONSE" | grep -oP '"refresh_token":\s*"\K[^"]+' || true)
 if [[ -n "$NEW_REFRESH_TOKEN" ]]; then
     # Overwrite line 1 with new access token and line 2 with updated refresh token
