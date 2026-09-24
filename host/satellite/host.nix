@@ -14,9 +14,10 @@
 
     specialArgs = {
       inherit
-        self
         inputs
         profile
+        self
+        system
         ;
     };
 

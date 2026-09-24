@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     disko = {
       url = "github:nix-community/disko?ref=v1.13.0";
@@ -36,8 +37,6 @@
       pkgs = import nixpkgs { inherit system; };
 
       profile = (import ./profile/home.nix) {
-        inherit inputs;
-
         username = "super";
         stateVersion = "26.05";
       };
